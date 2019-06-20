@@ -1,42 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <style>
-      *{
-        margin:0px;
-        padding:0px;
-      }
-      #content{
-        width:600px;
-        height:500px;
-        position:relative;
-        border:5px solid green;
-      }
-      #drag{
-        position:absolute;
-        height:100px;
-        width:100px;
-        top:50px;left:0px;
-        background:pink;
-        cursor:pointer;
-      }
-    </style>
-  </head>
-  <body>
-    <div id = "content">
-      <div id = "drag" >
-      </div> 
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="test.js"></script>
+</head>
+<body>
+  <script>
+    loadScript('./test.1.js', () => {
+      console.log(a)
+    })  
+  </script>
+</body>
 </html>
-<script src = "./test.js"></script>
-<script>
-  window.onload = function(){
-    var drag = new Drag({id: "drag", parentId: "content"});
-    drag.startDrag();
- 
-  }
- 
-</script>

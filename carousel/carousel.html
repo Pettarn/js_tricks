@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #carousel-container {
+            position: absolute;
+            width: 400px;
+            height: 300px;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #9cdcfe;
+        }
+        #carousel-container>li {
+            list-style: none;
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+        #carousel-picture-1 {
+            display: none;
+            background-color: #5b9670;
+        }
+        #carousel-picture-2 {
+            display: none;
+            background-color: #d27232;
+        }
+        #carousel-picture-3 {
+            display: none;
+            background-color: #d4bcd0;
+        }
+        #carousel-button {
+            position: absolute;
+            height: 20px;
+            top: 300px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+        }
+        #carousel-button>li {
+            list-style: none;
+            display: inline-block;
+            background-color: #adadad;
+            width: 30px;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="carousel-container">
+        <li id="carousel-picture-1"></li>
+        <li id="carousel-picture-2"></li>
+        <li id="carousel-picture-3"></li>
+    </div>
+    <div id="carousel-button">
+        <li class="carousel-button-per"></li>
+        <li class="carousel-button-per"></li>
+        <li class="carousel-button-per"></li>
+    </div>
+    <script src="./carousel.js"></script>
+</body>
+</html>
