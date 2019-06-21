@@ -1,7 +1,6 @@
-function loadScript(src, callback) {
-  let script = document.createElement('script')
-  script.src = src
-  script.onload = () => callback(script)
-  document.head.appendChild(script)
+async function func (callback) {
+  return 
 }
-
+func().then(() => {
+  console.log()
+})

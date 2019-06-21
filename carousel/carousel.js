@@ -7,26 +7,14 @@ let buttons = document.getElementsByClassName('carousel-button-per') // 'array'
 let container = document.getElementById('carousel-container')
 let pictures = container.getElementsByTagName('li') // 'array'
 
-let count = 0
 
-let autoScroll = new Promise(function(resolve, reject) {
-    setTimeout(function () {
-        resolve(0)
-    }, 500)
-})
-
-autoScroll
-.then(function (count) {
-    setState(count)
-    return ++count
-})
-.then(function (count) {
-    setState(count)
-    return ++count
-})
-
+document.documentElement.onload = setState(0)
 
 function setState(index) {
+    if(index >= 3) {
+        index %= 3
+        return setState(index)
+    }
     for (let i = 0; i < 3; i++) {
         if (index === i) {
             pictures[index].style.display = "block"
@@ -37,6 +25,16 @@ function setState(index) {
             buttons[i].style.background = "grey"
         }
     }
+
+    setTimeout(() => {
+        index++
+        setState(index)
+    }, 1500)
+}
+
+function debounce (func) {
+    setTimeout(func, 1000)
+    
 }
 
 buttons[0].onclick = function () {
